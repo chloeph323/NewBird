@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Quiz from './pages/quiz';
+import BirdLog from './pages/birdLog'
 // import React, { useState, useEffect, useRef } from 'react';
 // import './App.css'
 // import axios from 'axios'
@@ -10,6 +11,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Quiz />} />
+          <Route path="/Quiz" element={<Quiz />} />
+          <Route path="/BirdLog" element={<BirdLog />} />
         </Routes>
       </BrowserRouter>
     </div>
