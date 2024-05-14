@@ -30,7 +30,6 @@ app.get('/auth/callback', (req, res) => {
     }
     // Output the session information to the browser
     res.send(`Session ID: ${session}`);
-    //res.redirect('/home');
 });
 
 const PORT = process.env.PORT || 3000;
