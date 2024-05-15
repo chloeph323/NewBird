@@ -1,3 +1,4 @@
+// Bisera's Code
 const axios = require('axios');
 const db = require('../db/db');
 
@@ -29,7 +30,7 @@ async function getBirdImages(birdName) {
 	try {
 		const flickrUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=0a78ea08b8e8c9fc68ea252eea8f713e&text=${encodeURIComponent(
 			birdName
-		)}&per_page=1&format=json&nojsoncallback=1`;
+		)}&per_page=10&format=json&nojsoncallback=1`;
 
 		const response = await axios.get(flickrUrl);
 		const data = response.data;

@@ -3,7 +3,7 @@ const apiKey = 'AIzaSyBWtTi7IsioMa3TnDRoreLG6SE3fd4p_iY';
 
 async function getUserLocation() {
 	try {
-		const response = await axios.get('https://ipapi.co/json/');
+		const response = await axios.get('https://ipapi.co/json');
 		if (response.data.latitude && response.data.longitude) {
 			const lat = response.data.latitude;
 			const lng = response.data.longitude;
@@ -43,5 +43,6 @@ async function reverseGeocode(lat, lng, apiKey) {
 }
 
 module.exports = {
-	getUserLocation
+	getUserLocation,
+	reverseGeocode
 };

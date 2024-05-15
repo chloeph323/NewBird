@@ -2,8 +2,6 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs');
-const path = require('path');
 const fileUpload = require('express-fileupload');
 const cors = require('cors');
 
@@ -28,15 +26,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const buildPath = path.resolve(__dirname, '../frontend/build');
-const index = path.join(buildPath, 'index.html');
-app.use(express.static(buildPath));
-
-app.get('/', (req, res) => {
-	res.sendFile(index);
-});
-
-app.get('/login', AuthController.handleLogin);
+app.post('/login', AuthController.handleLogin);
 app.get('/auth/callback', AuthController.handleLoginRedirect);
 
 app.get('/location', LocationController.handleGetLocationRequest);
